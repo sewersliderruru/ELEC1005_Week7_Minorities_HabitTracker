@@ -20,3 +20,5 @@ However, each attempt failed with a non-recoverable `System.NullReferenceExcepti
 As a workaround, the `.msapp` file was manually extracted as a zip archive, which successfully produced the app source structure, including Power Apps YAML screen definitions, control metadata, references, tests, and assets.
 
 This repository therefore includes both the original `.msapp` file and the manually extracted source contents.
+
+This repository contains the exported and manually unpacked Power Apps source files for the SurfGuard Assignment 2 MVP.
