@@ -1,0 +1,172 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ClubAdminSignIn:
+    Children:
+      - Image5_2:
+          Control: Image@2.2.3
+          Properties:
+            Height: =1134
+            Image: ='ChatGPT Image May 28, 2026, 10_38_10 PM'
+            ImagePosition: =ImagePosition.Fill
+            Width: =640
+            Y: =2
+      - Button1_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(214, 221, 224, 1)
+            Fill: =Color.White
+            Height: =947
+            HoverBorderColor: =Color.White
+            HoverFill: =Color.White
+            PressedBorderColor: =Color.White
+            PressedFill: =Color.White
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =537
+            X: =51
+            Y: =107
+      - Image6_2:
+          Control: Image@2.2.3
+          Properties:
+            Height: =134
+            Image: =waves_logo_white_40
+            Width: =119
+            X: =260
+            Y: =150
+      - Button2_2:
+          Control: ModernButton@1.0.0
+          Properties:
+            Height: =108
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Text: =""
+            Width: =144
+            X: =247
+            Y: =163
+      - Text3_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Align: =Align.Center
+            Height: =95
+            Size: =56
+            Text: ="SafeGuard"
+            Width: =302
+            X: =168
+            Y: =271
+      - Text4_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Align: =Align.Center
+            Height: =70
+            Text: ="Sign in as Club Admin"
+            Width: =332
+            X: =153
+            Y: =333
+      - Text8_4:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="Email"
+            X: =80
+            Y: =422
+      - Text8_5:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="Password"
+            X: =80
+            Y: =559
+      - Button3_6:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Height: =55
+            OnSelect: |-
+              =Set(currentRole, "Club Admin");
+              Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+            Text: ="Sign In"
+            Width: =448
+            X: =99
+            Y: =737
+      - Button3_7:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(214, 221, 224, 1)
+            Color: =RGBA(79, 90, 94, 1)
+            Fill: =Color.White
+            Height: =55
+            HoverBorderColor: =ColorValue("#ff8c42")
+            HoverFill: =ColorValue("#ff8c42")
+            OnSelect: =Navigate(RoleSelection, ScreenTransition.Fade)
+            Size: =20
+            Text: ="Back to Role Selection"
+            Width: =448
+            X: =105
+            Y: =817
+      - Button3_8:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =ColorValue("#fff5f2")
+            Height: =130
+            HoverFill: =ColorValue("#fff5f2")
+            PressedFill: =ColorValue("#fff5f2")
+            Text: |-
+              ="
+              "
+            Width: =454
+            X: =93
+            Y: =898
+      - Text9_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =RGBA(106, 122, 127, 1)
+            Height: =48
+            Text: ="Demo Credentials"
+            Width: =215
+            X: =212
+            Y: =898
+      - Text10_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Height: =62
+            Size: =30
+            Text: ="Sarah@SafeWatch.com"
+            Width: =317
+            X: =168
+            Y: =932
+      - Image6_3:
+          Control: Image@2.2.3
+          Properties:
+            Height: =134
+            Image: =waves_logo_white_40
+            Width: =119
+            X: =260
+            Y: =150
+      - TextInput2_4:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Default: =""
+            Fill: =RGBA(214, 221, 224, 0.2)
+            Height: =67
+            Width: =460
+            X: =86
+            Y: =472
+      - TextInput2_5:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Default: =""
+            Fill: =RGBA(214, 221, 224, 0.2)
+            Height: =67
+            Width: =460
+            X: =89
+            Y: =617

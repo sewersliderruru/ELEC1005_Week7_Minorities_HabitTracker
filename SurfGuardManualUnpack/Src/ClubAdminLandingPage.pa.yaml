@@ -1,0 +1,172 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ClubAdminLandingPage:
+    Children:
+      - RectQuickActionBar1_5:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =88
+            Width: =Parent.Width
+      - LblAppName1_5:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Fill: =Color.White
+            Height: =88
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Text11_5:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =App.Theme.Colors.Primary
+            Font: =Font.'Lato Black'
+            Height: =70
+            Size: =35
+            Text: ="SafeGuard"
+            Width: =250
+            X: =99
+      - Button5_5:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Text: |-
+              ="
+              "
+            Width: =72
+            X: =27
+            Y: =9
+      - Image6_9:
+          Control: Image@2.2.3
+          Properties:
+            Height: =70
+            Image: =waves_logo_white_40
+            Width: =61
+            X: =32
+            Y: =9
+      - Text12_5:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="lifegurad Management"
+            Width: =316
+            X: =99
+            Y: =38
+      - Canvas1_5:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            Y: =RectQuickActionBar1_5.Y + RectQuickActionBar1_5.Height
+          Children:
+            - DataCard1_5:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =936
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Text13_7:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Font: =Font.'Lato Black'
+                        Height: =80
+                        Size: =40
+                        Text: ="Welcome back, Sarah Chen"
+                        Width: =577
+                        Y: =84
+                  - Text14_8:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =48
+                        Text: ="your currently available for incidents"
+                        Width: =466
+                        Y: =149
+                  - Button7_6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =192
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(214, 221, 224, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        Text: |-
+                          ="
+                          "
+                        Width: =594
+                        X: =15
+                        Y: =206
+                  - Text15_15:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Text: ="Pending Incidents"
+                        Width: =236
+                        X: =31
+                        Y: =210
+                  - Text15_16:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =84
+                        Size: =50
+                        Text: =0
+                        Width: =154
+                        X: =31
+                        Y: =260
+                  - Text15_17:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =54
+                        Size: =22
+                        Text: =0
+                        Width: =134
+                        X: =31
+                        Y: =344
+                  - DropdownMenu_1:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        Default: ="Home"
+                        Height: =68
+                        Items: "=Switch(\n    currentRole,\n    \n    \"Volunteer\",\n        [\"Home\", \"Create Incident\"],\n\n    \"Patrol Captain\",\n        [\"Home\", \"Create Incident\", \"Verify Incidents\", \"Log Equipment\"],\n\n    \"Club Admin\",\n        [\"Home\", \"Log Equipment\"],\n\n    [\"Home\"]\n)"
+                        Items.Value: =Value
+                        OnChange: |-
+                          =Switch(
+                              DropdownMenu_1.Selected.Value,
+
+                              "Home",
+                                  Blank(),
+
+                              "Create Incident",
+                                  Reset(DropdownMenu_1);
+                                  Navigate(CreateIncident, ScreenTransition.Fade),
+
+                              "Log Equipment",
+                                  Reset(DropdownMenu_1);
+                                  Navigate('Equipment Management', ScreenTransition.Fade)
+                          )
+                        OnSelect: =
+                        Width: =609
+                        X: =15
+                        Y: =16
+      - Icon4:
+          Control: ModernIcon@1.1.0
+          Properties:
+            Height: =51
+            Icon: ="ArrowExit"
+            OnSelect: =Navigate(RoleSelection,ScreenTransition.Fade)
+            Width: =58
+            X: =563
+            Y: =24

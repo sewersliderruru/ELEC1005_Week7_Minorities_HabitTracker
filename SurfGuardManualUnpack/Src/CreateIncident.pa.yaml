@@ -1,0 +1,495 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  CreateIncident:
+    Children:
+      - RectQuickActionBar1_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =88
+            Width: =Parent.Width
+      - LblAppName1_2:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Fill: =Color.White
+            Height: =88
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Text11_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =App.Theme.Colors.Primary
+            Font: =Font.'Lato Black'
+            Height: =70
+            Size: =35
+            Text: ="SafeGuard"
+            Width: =250
+            X: =99
+      - Button5_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Text: |-
+              ="
+              "
+            Width: =72
+            X: =27
+            Y: =9
+      - Image6_6:
+          Control: Image@2.2.3
+          Properties:
+            Height: =70
+            Image: =waves_logo_white_40
+            Width: =61
+            X: =32
+            Y: =9
+      - Text12_2:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="lifegurad Management"
+            Width: =316
+            X: =33
+            Y: =608
+      - Canvas1_2:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            Y: =RectQuickActionBar1_2.Y + RectQuickActionBar1_2.Height
+          Children:
+            - DataCard1_2:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1562
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Button10:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =Color.White
+                        Color: =Color.Black
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =45
+                        HoverBorderColor: =Color.White
+                        HoverColor: =Color.Black
+                        HoverFill: =RGBA(253, 207, 180, 1)
+                        OnSelect: |-
+                          =Reset(Title);
+                          Reset(Description);
+                          Reset(Severity);
+                          Reset(Beach_Zone);
+                          Reset(Specific_location);
+                          Reset(Reportee);
+
+                          Set(showIncidentErrors, false);
+
+                          Switch(
+                              currentRole,
+
+                              "Volunteer",
+                                  Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                              "Patrol Captain",
+                                  Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                              "Club Admin",
+                                  Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+                          )
+                        PressedBorderColor: =Color.White
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: ="Back"
+                        Width: =194
+                        X: =15
+                        Y: =24
+                  - Icon1:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Height: =36
+                        Icon: ="ArrowLeft"
+                        IconColor: =RGBA(0, 0, 0, 1)
+                        Width: =30
+                        X: =34
+                        Y: =28
+                  - Text16:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =104
+                        Size: =55
+                        Text: ="Create New Incident"
+                        Width: =550
+                        X: =22
+                        Y: =52
+                  - Text17:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =48
+                        Text: ="Report a new incident requiring attention"
+                        Width: =526
+                        X: =34
+                        Y: =142
+                  - Button14:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =1337
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Text: =
+                        Width: =602
+                        X: =15
+                        Y: =190
+                  - Text13:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Incident Title *"
+                        X: =34
+                        Y: =320
+                  - Text13_3:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Description *"
+                        X: =34
+                        Y: =450
+                  - Severity:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Severity.Selected.Value),
+                              ColorValue("#DC2626"),
+                              ColorValue("#7C2D12")
+                          )
+                        Height: =62
+                        Items: |-
+                          =[
+                              "Low – Minor issue",
+                              "Medium – Needs attention",
+                              "High – Urgent",
+                              "Critical – Immediate response"
+                          ]
+                        Items.Value: =Value
+                        Width: =492
+                        X: =34
+                        Y: =664
+                  - Beach_Zone:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Beach_Zone.Selected.Value),
+                              ColorValue("#DC2626"),
+                              ColorValue("#7C2D12")
+                          )
+                        Height: =62
+                        Items: =["North Beach","Central Beach", "South Beach"]
+                        Items.Value: =Value
+                        Width: =492
+                        X: =34
+                        Y: =784
+                  - Text13_4:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Severity *"
+                        X: =34
+                        Y: =611
+                  - Text13_5:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Beach Zone *"
+                        X: =34
+                        Y: =736
+                  - Text13_6:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =65
+                        Text: ="Specific Location *"
+                        Width: =350
+                        X: =34
+                        Y: =875
+                  - Text13_9:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Reported by *"
+                        X: =34
+                        Y: =1050
+                  - Text13_10:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =65
+                        Size: =19
+                        Text: ="provide specific landmarks or identifying features"
+                        Width: =538
+                        X: =34
+                        Y: =970
+                  - Text13_11:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =60
+                        Size: =30
+                        Text: ="Incident Details"
+                        Width: =424
+                        X: =34
+                        Y: =216
+                  - Text13_12:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Lighter
+                        Height: =45
+                        Text: ="Report a new incident requiring attention"
+                        Width: =583
+                        X: =34
+                        Y: =257
+                  - Button12:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(253, 207, 180, 1)
+                        Fill: =RGBA(253,207,180,1)
+                        Height: =194
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =RGBA(253,207,180,1)
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =RGBA(253,207,180,1)
+                        Text: |-
+                          ="
+                          "
+                        Width: =552
+                        X: =34
+                        Y: =1211
+                  - Button12_1:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Height: =56
+                        OnSelect: |-
+                          =If(
+                              IsBlank(Title.Text) ||
+                              IsBlank(Description.Text) ||
+                              IsBlank(Severity.Selected.Value) ||
+                              IsBlank(Beach_Zone.Selected.Value) ||
+                              IsBlank(Specific_location.Text) ||
+                              IsBlank(Reportee.Text),
+
+                              Set(showIncidentErrors, true);
+                              Notify("Please fill in all required fields.", NotificationType.Error),
+
+                              Patch(
+                                  Incidents,
+                                  Defaults(Incidents),
+                                  {
+                                      IncidentTitle: Title.Text,
+                                      Description: Description.Text,
+                                      EmergencyLevel: {
+                                          Value: If(
+                                              Severity.Selected.Value = "Low – Minor issue",
+                                              "low",
+                                              Severity.Selected.Value = "Medium – Needs attention",
+                                              "medium",
+                                              Severity.Selected.Value = "High – Urgent",
+                                              "high",
+                                              Severity.Selected.Value = "Critical – Immediate response",
+                                              "critical"
+                                          )
+                                      },
+                                      BeachSection: {Value: Beach_Zone.Selected.Value},
+                                      Location: Specific_location.Text,
+                                      Status: {Value: "pending"},
+                                      ReportedBy: Reportee.Text,
+                                      ReportedAt: Now()
+                                  }
+                              );
+
+                              Refresh(Incidents);
+                              Set(showIncidentErrors, false);
+                              Notify("Incident logged successfully.", NotificationType.Success);
+
+                              Switch(
+                                  currentRole,
+
+                                  "Volunteer",
+                                      Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                                  "Patrol Captain",
+                                      Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                                  "Club Admin",
+                                      Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+                              )
+                          )
+                        Text: ="Create Incident"
+                        Width: =362
+                        X: =34
+                        Y: =1434
+                  - Button12_2:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        Color: =Color.Black
+                        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        FontWeight: =FontWeight.Normal
+                        Height: =56
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Text: ="Cancel"
+                        Width: =180
+                        X: =406
+                        Y: =1434
+                  - Icon2:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Height: =40
+                        Icon: ="Info"
+                        X: =36
+                        Y: =1239
+                  - Text13_13:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =66
+                        Size: =23
+                        Text: ="Incident will be created with ""pending"" status"
+                        Width: =508
+                        X: =78
+                        Y: =1226
+                  - Text13_14:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =142
+                        Size: =20
+                        Text: ="You can assign volunteers and update the status after creation. Critical incidents will be prioritized in the system."
+                        Width: =476
+                        X: =78
+                        Y: =1263
+                  - Title:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Title.Text),
+                              ColorValue("#DC2626"),
+                              ColorValue("#D1D5DB")
+                          )
+                        Default: =
+                        Height: =52
+                        HintText: ="Brief description of incident"
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        PressedFill: =Color.White
+                        Width: =460
+                        X: =34
+                        Y: =367
+                  - Description:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Description.Text),
+                              ColorValue("#DC2626"),
+                              ColorValue("#D1D5DB")
+                          )
+                        Default: =
+                        Height: =111
+                        HintText: ="Brief description of what happened and what assistance is needed"
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        Mode: =TextMode.MultiLine
+                        PressedFill: =Color.White
+                        Width: =460
+                        X: =34
+                        Y: =500
+                  - Specific_location:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Specific_location.Text),
+                              ColorValue("#DC2626"),
+                              ColorValue("#D1D5DB")
+                          )
+                        Default: =
+                        Height: =52
+                        HintText: ="e.g Near Lifeguard tower 3"
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        PressedFill: =Color.White
+                        Width: =460
+                        X: =34
+                        Y: =930
+                  - Reportee:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showIncidentErrors && IsBlank(Reportee.Text),
+                              ColorValue("#DC2626"),
+                              ColorValue("#D1D5DB")
+                          )
+                        Default: =
+                        Height: =52
+                        HintText: ="e.g Volunteer A"
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        PressedFill: =Color.White
+                        Width: =460
+                        X: =34
+                        Y: =1100
+            - DataCard4_2:
+                Control: DataCard@1.0.2
+                Variant: BlankCard
+                Properties:
+                  Height: =112
+                  Width: =640
+                  X: =0
+                  Y: =1
+                Children:
+                  - Text23_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =46
+                        Text: ="© 2026 SafeWatch. All rights reserved."
+                        Width: =462
+                        X: =78
+                        Y: =12
+                  - Text25_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =58
+                        Text: |-
+                          ="Emergency: 000 • Non-Emergency: 131 444"
+                        Width: =562
+                        X: =48
+                        Y: =58

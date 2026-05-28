@@ -1,0 +1,689 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Equipment Management:
+    Children:
+      - RectQuickActionBar1_3:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =88
+            Width: =Parent.Width
+      - LblAppName1_3:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Fill: =Color.White
+            Height: =88
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Text11_3:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =App.Theme.Colors.Primary
+            Font: =Font.'Lato Black'
+            Height: =70
+            Size: =35
+            Text: ="SafeGuard"
+            Width: =250
+            X: =99
+      - Button5_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Text: |-
+              ="
+              "
+            Width: =72
+            X: =27
+            Y: =9
+      - Image6_7:
+          Control: Image@2.2.3
+          Properties:
+            Height: =70
+            Image: =waves_logo_white_40
+            Width: =61
+            X: =32
+            Y: =9
+      - Text12_3:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="lifegurad Management"
+            Width: =316
+            X: =99
+            Y: =38
+      - Canvas1_3:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            Y: =RectQuickActionBar1_3.Y + RectQuickActionBar1_3.Height
+          Children:
+            - DataCard1_3:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1221
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Text16_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =104
+                        Size: =50
+                        Text: ="Equipment Management"
+                        Width: =595
+                        X: =22
+                        Y: =52
+                  - Text17_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =48
+                        Text: ="Digital Shift Check System"
+                        Width: =526
+                        X: =25
+                        Y: =136
+                  - LatestIncidents_1:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        Height: =968
+                        Items: =Equipment
+                        TemplatePadding: =5
+                        TemplateSize: =390
+                        Width: =602
+                        X: =12
+                        Y: =181
+                      Children:
+                        - Button14_8:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214,221,224,1)
+                              DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                              DisabledFill: =RGBA(255, 255, 255, 1)
+                              Fill: =Color.White
+                              Height: =381
+                              HoverBorderColor: =RGBA(214, 221, 224, 1)
+                              HoverFill: =Color.White
+                              PressedBorderColor: =RGBA(214,221,224,1)
+                              PressedFill: =Color.White
+                              Text: =""
+                              Width: =554
+                              X: =21
+                              Y: =9
+                        - Text22_13:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Color: =RGBA(0, 0, 0, 1)
+                              Font: =Font.'Lato Black'
+                              Height: =71
+                              Size: =25
+                              Text: =ThisItem.EquipmentName
+                              Width: =374
+                              X: =89
+                              Y: =9
+                        - Button13_41:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              DisabledColor: |-
+                                =If(
+                                    ThisItem.CurrentStatus.Value = "Ok",
+                                    ColorValue("#166534"),
+                                    ThisItem.CurrentStatus.Value = "Repair",
+                                    ColorValue("#92400E"),
+                                    ThisItem.CurrentStatus.Value = "Missing",
+                                    ColorValue("#991B1B"),
+                                    ColorValue("#374151")
+                                )
+                              DisabledFill: |-
+                                =If(
+                                    ThisItem.CurrentStatus.Value = "Ok",
+                                    ColorValue("#DCFCE7"),
+                                    ThisItem.CurrentStatus.Value = "Repair",
+                                    ColorValue("#FEF3C7"),
+                                    ThisItem.CurrentStatus.Value = "Missing",
+                                    ColorValue("#FEE2E2"),
+                                    ColorValue("#E5E7EB")
+                                )
+                              DisplayMode: =DisplayMode.Disabled
+                              Fill: =RGBA(0, 0, 0, 1)
+                              Height: =42
+                              HoverBorderColor: =Color.White
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Size: =17
+                              Text: =ThisItem.CurrentStatus.Value
+                              Width: =105
+                              X: =435
+                              Y: =24
+                        - Button13_42:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: |-
+                                =If(
+                                    ThisItem.Category.Value = "Rescue",
+                                    ColorValue("#1D4ED8"),
+                                    ThisItem.Category.Value = "First Aid",
+                                    ColorValue("#991B1B"),
+                                    ThisItem.Category.Value = "Communication",
+                                    ColorValue("#6D28D9"),
+                                    ThisItem.Category.Value = "Safety",
+                                    ColorValue("#166534"),
+                                    ColorValue("#374151")
+                                )
+                              DisabledColor: |-
+                                =If(
+                                    ThisItem.Category.Value = "Rescue",
+                                    ColorValue("#1D4ED8"),
+                                    ThisItem.Category.Value = "First Aid",
+                                    ColorValue("#991B1B"),
+                                    ThisItem.Category.Value = "Communication",
+                                    ColorValue("#6D28D9"),
+                                    ThisItem.Category.Value = "Safety",
+                                    ColorValue("#166534"),
+                                    ColorValue("#374151")
+                                )
+                              DisabledFill: |-
+                                =If(
+                                    ThisItem.Category.Value = "Rescue",
+                                    ColorValue("#DBEAFE"),
+                                    ThisItem.Category.Value = "First Aid",
+                                    ColorValue("#FEE2E2"),
+                                    ThisItem.Category.Value = "Communication",
+                                    ColorValue("#EDE9FE"),
+                                    ThisItem.Category.Value = "Safety",
+                                    ColorValue("#DCFCE7"),
+                                    ColorValue("#E5E7EB")
+                                )
+                              DisplayMode: =DisplayMode.Disabled
+                              Fill: =RGBA(0, 0, 0, 1)
+                              Height: =47
+                              HoverBorderColor: =Color.White
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Size: =17
+                              Text: =ThisItem.Category.Value
+                              Width: =176
+                              X: =219
+                              Y: =80
+                        - Button13_43:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: =
+                              DisabledColor: |-
+                                =If(
+                                    ThisItem.BeachSection.Value = "North beach",
+                                    ColorValue("#1D4ED8"),
+                                    ThisItem.BeachSection.Value = "Central Beach",
+                                    ColorValue("#92400E"),
+                                    ThisItem.BeachSection.Value = "South Beach",
+                                    ColorValue("#166534"),
+                                    ColorValue("#374151")
+                                )
+                              DisabledFill: |-
+                                =If(
+                                    ThisItem.BeachSection.Value = "North beach",
+                                    ColorValue("#DBEAFE"),
+                                    ThisItem.BeachSection.Value = "Central Beach",
+                                    ColorValue("#FEF3C7"),
+                                    ThisItem.BeachSection.Value = "South Beach",
+                                    ColorValue("#DCFCE7"),
+                                    ColorValue("#E5E7EB")
+                                )
+                              DisplayMode: =DisplayMode.Disabled
+                              Fill: |-
+                                =If(
+                                    ThisItem.BeachSection.Value = "North beach",
+                                    ColorValue("#DBEAFE"),
+                                    ThisItem.BeachSection.Value = "Central Beach",
+                                    ColorValue("#FEF3C7"),
+                                    ThisItem.BeachSection.Value = "South Beach",
+                                    ColorValue("#DCFCE7"),
+                                    ColorValue("#E5E7EB")
+                                )
+                              Height: =47
+                              HoverBorderColor: =Color.White
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Size: =17
+                              Text: =ThisItem.BeachSection.Value
+                              Width: =152
+                              X: =49
+                              Y: =80
+                        - Icon8:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Icon: ="Info"
+                              IconColor: =RGBA(0, 0, 0, 1)
+                              OnSelect: =Select(Parent)
+                              X: =36
+                              Y: =24
+                        - Text20_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =57
+                              Text: ="last checked"
+                              Width: =177
+                              X: =67
+                              Y: =133
+                        - Text20_7:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =57
+                              Text: ="Checked By"
+                              Width: =185
+                              X: =385
+                              Y: =133
+                        - Text20_8:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =52
+                              Size: =22
+                              Text: =ThisItem.LastCheckedAt
+                              Width: =304
+                              X: =61
+                              Y: =167
+                        - Text20_9:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Color: |-
+                                =If(
+                                    showEquipmentErrors && equipmentErrorID = ThisItem.ID,
+                                    ColorValue("#DC2626"),
+                                    ColorValue("#111827")
+                                )
+                              Height: =69
+                              OnSelect: =Set(editingCheckedByID, ThisItem.ID)
+                              Text: =ThisItem.CheckedBy
+                              Visible: =editingCheckedByID <> ThisItem.ID
+                              Width: =170
+                              X: =385
+                              Y: =161
+                        - Icon8_1:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Icon: ="Calendar"
+                              IconColor: =RGBA(0, 0, 0, 1)
+                              OnSelect: =Select(Parent)
+                              X: =25
+                              Y: =160
+                        - Icon8_2:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Icon: ="Person"
+                              IconColor: =RGBA(0, 0, 0, 1)
+                              OnSelect: =Select(Parent)
+                              X: =343
+                              Y: =160
+                        - Rectangle1_2:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              DisabledFill: =ColorValue("#E5E7EB")
+                              DisplayMode: =DisplayMode.Disabled
+                              Height: =4
+                              Width: =557
+                              X: =18
+                              Y: =226
+                        - Rectangle3:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              DisabledFill: =ColorValue("#E5E7EB")
+                              DisplayMode: =DisplayMode.Disabled
+                              Height: =72
+                              OnSelect: =Select(Parent)
+                              Width: =4
+                              X: =330
+                              Y: =149
+                        - Text20_10:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =49
+                              Text: ="Additional Notes"
+                              Width: =275
+                              X: =61
+                              Y: =235
+                        - Text20_12:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =47
+                              OnSelect: =Set(editingEquipmentID, ThisItem.ID)
+                              Text: =ThisItem.Notes
+                              Visible: =editingEquipmentID <> ThisItem.ID
+                              Width: =331
+                              X: =36
+                              Y: =273
+                        - Button13_44:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: =Color.Green
+                              DisabledColor: =RGBA(0, 0, 0, 1)
+                              DisabledFill: =RGBA(166, 215, 153, 1)
+                              Fill: =RGBA(166, 215, 153, 1)
+                              Height: =55
+                              HoverBorderColor: =Color.White
+                              HoverColor: =Self.Color
+                              HoverFill: =RGBA(166,215,153,1)
+                              OnSelect: |-
+                                =If(
+                                    checkedByConfirmedID <> ThisItem.ID,
+
+                                    Set(showEquipmentErrors, true);
+                                    Set(equipmentErrorID, ThisItem.ID);
+                                    Notify("Please confirm who checked this equipment before updating status.", NotificationType.Error),
+
+                                    Patch(
+                                        Equipment,
+                                        ThisItem,
+                                        {
+                                            CurrentStatus: {Value: "Ok"},
+                                            LastCheckedAt: Now()
+                                        }
+                                    );
+
+                                    Set(showEquipmentErrors, false);
+                                    Set(equipmentErrorID, Blank());
+                                    Notify("Equipment marked as OK.", NotificationType.Success)
+                                )
+                              PressedBorderColor: =RGBA(0,0,0,0)
+                              PressedFill: =RGBA(166,215,153,1)
+                              RadiusBottomLeft: =5
+                              RadiusBottomRight: =5
+                              RadiusTopLeft: =5
+                              RadiusTopRight: =5
+                              Size: =17
+                              Text: ="Ok"
+                              Width: =170
+                              X: =31
+                              Y: =320
+                        - Button13_45:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: =RGBA(224, 86, 6, 1)
+                              DisabledColor: =Self.Color
+                              DisabledFill: =RGBA(247, 240, 104, 1)
+                              Fill: =RGBA(247, 240, 104, 1)
+                              Height: =55
+                              HoverBorderColor: =Color.White
+                              HoverColor: =Self.Color
+                              HoverFill: =RGBA(247, 240, 104, 1)
+                              OnSelect: |-
+                                =If(
+                                    checkedByConfirmedID <> ThisItem.ID,
+
+                                    Set(showEquipmentErrors, true);
+                                    Set(equipmentErrorID, ThisItem.ID);
+                                    Notify("Please confirm who checked this equipment before updating status.", NotificationType.Error),
+
+                                    Patch(
+                                        Equipment,
+                                        ThisItem,
+                                        {
+                                            CurrentStatus: {Value: "Repair"},
+                                            LastCheckedAt: Now()
+                                        }
+                                    );
+
+                                    Set(showEquipmentErrors, false);
+                                    Set(equipmentErrorID, Blank());
+                                    Notify("Equipment marked for repair.", NotificationType.Warning)
+                                )
+                              PressedBorderColor: =RGBA(0,0,0,0)
+                              PressedFill: =RGBA(247, 240, 104, 1)
+                              RadiusBottomLeft: =5
+                              RadiusBottomRight: =5
+                              RadiusTopLeft: =5
+                              RadiusTopRight: =5
+                              Size: =17
+                              Text: ="Repair"
+                              Width: =170
+                              X: =215
+                              Y: =320
+                        - Button13_46:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledColor: =RGBA(0, 0, 0, 1)
+                              DisabledFill: =RGBA(253, 207, 180, 1)
+                              Fill: =RGBA(247, 101, 104, 1)
+                              Height: =55
+                              HoverBorderColor: =Color.White
+                              HoverColor: =Self.Color
+                              HoverFill: =RGBA(247, 101, 104, 1)
+                              OnSelect: |-
+                                =If(
+                                    checkedByConfirmedID <> ThisItem.ID,
+
+                                    Set(showEquipmentErrors, true);
+                                    Set(equipmentErrorID, ThisItem.ID);
+                                    Notify("Please confirm who checked this equipment before updating status.", NotificationType.Error),
+
+                                    Patch(
+                                        Equipment,
+                                        ThisItem,
+                                        {
+                                            CurrentStatus: {Value: "Missing"},
+                                            LastCheckedAt: Now()
+                                        }
+                                    );
+
+                                    Set(showEquipmentErrors, false);
+                                    Set(equipmentErrorID, Blank());
+                                    Notify("Equipment marked as missing.", NotificationType.Error)
+                                )
+                              PressedBorderColor: =RGBA(0,0,0,0)
+                              PressedFill: =RGBA(247, 101, 104, 1)
+                              RadiusBottomLeft: =5
+                              RadiusBottomRight: =5
+                              RadiusTopLeft: =5
+                              RadiusTopRight: =5
+                              Size: =17
+                              Text: |-
+                                ="Missing
+                                "
+                              Width: =170
+                              X: =395
+                              Y: =320
+                        - Icon7_1:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              Color: =Color.Black
+                              Height: =38
+                              Icon: =Icon.Notebook
+                              Width: =30
+                              X: =31
+                              Y: =243
+                        - Icon9:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Height: =30
+                              Icon: ="Edit"
+                              OnSelect: =Select(Parent)
+                              Width: =36
+                              X: =529
+                              Y: =146
+                        - Icon9_1:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Height: =30
+                              Icon: ="Edit"
+                              OnSelect: =Select(Parent)
+                              Width: =36
+                              X: =269
+                              Y: =243
+                        - TextInput3:
+                            Control: ModernTextInput@1.1.0
+                            Properties:
+                              Default: =ThisItem.Notes
+                              Height: =34
+                              OnChange: |-
+                                =Patch(
+                                    Equipment,
+                                    ThisItem,
+                                    {
+                                        Notes: Self.Text,
+                                        LastCheckedAt: Now()
+                                    }
+                                );
+
+                                Set(editingEquipmentID, Blank());
+
+                                Notify("Notes updated.", NotificationType.Success)
+                              Visible: =editingEquipmentID = ThisItem.ID
+                              Width: =331
+                              X: =36
+                              Y: =282
+                        - TextInput5:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              Default: =ThisItem.CheckedBy
+                              Height: =42
+                              OnChange: |-
+                                =Patch(
+                                    Equipment,
+                                    ThisItem,
+                                    {
+                                        CheckedBy: Self.Text,
+                                        LastCheckedAt: Now()
+                                    }
+                                );
+
+                                Set(checkedByConfirmedID, ThisItem.ID);
+
+                                Set(showEquipmentErrors, false);
+                                Set(equipmentErrorID, Blank());
+
+                                Set(editingCheckedByID, Blank());
+
+                                Notify("Checked by updated.", NotificationType.Success)
+                              OnSelect: =Select(Parent)
+                              Visible: |
+                                =editingCheckedByID = ThisItem.ID
+                              Width: =177
+                              X: =388
+                              Y: =179
+                        - TextInput4:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              Default: =ThisItem.Notes
+                              Height: =47
+                              OnChange: |
+                                =Patch(
+                                    Equipment,
+                                    ThisItem,
+                                    {
+                                        Notes: Self.Text,
+                                        LastCheckedAt: Now()
+                                    }
+                                );
+
+                                Set(editingEquipmentID, Blank());
+
+                                Notify("Notes updated.", NotificationType.Success)
+                              OnSelect: =Select(Parent)
+                              Visible: =editingEquipmentID = ThisItem.ID
+                              Width: =331
+                              X: =36
+                              Y: =273
+                  - Button10_3:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =Color.White
+                        Color: =Color.Black
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =45
+                        HoverBorderColor: =Color.White
+                        HoverColor: =Color.Black
+                        HoverFill: =RGBA(253, 207, 180, 1)
+                        OnSelect: |-
+                          =Switch(
+                              currentRole,
+
+                              "Volunteer",
+                                  Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                              "Patrol Captain",
+                                  Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                              "Club Admin",
+                                  Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+                          )
+                        PressedBorderColor: =Color.White
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: ="Back"
+                        Width: =194
+                        X: =1
+                        Y: =21
+                  - Icon1_1:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Height: =36
+                        Icon: ="ArrowLeft"
+                        IconColor: =RGBA(0, 0, 0, 1)
+                        OnSelect: |-
+                          =Switch(
+                              currentRole,
+
+                              "Volunteer",
+                                  Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                              "Patrol Captain",
+                                  Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                              "Club Admin",
+                                  Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+                          )
+                        Width: =30
+                        X: =25
+                        Y: =28
+            - DataCard4_3:
+                Control: DataCard@1.0.2
+                Variant: BlankCard
+                Properties:
+                  Height: =112
+                  Width: =640
+                  X: =0
+                  Y: =1
+                Children:
+                  - Text23_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =46
+                        Text: ="© 2026 SafeWatch. All rights reserved."
+                        Width: =462
+                        X: =78
+                        Y: =12
+                  - Text25_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =58
+                        Text: |-
+                          ="Emergency: 000 • Non-Emergency: 131 444"
+                        Width: =562
+                        X: =48
+                        Y: =58

@@ -1,0 +1,292 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  RoleSelection:
+    Children:
+      - RectQuickActionBar4:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =0
+            Width: =Parent.Width
+      - LblAppName4:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Height: =0
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Canvas4:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =1136
+            Width: =Parent.Width
+            Y: =RectQuickActionBar4.Y + RectQuickActionBar4.Height
+          Children:
+            - DataCard5:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1627
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Image1:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =1627
+                        Image: ='ChatGPT Image May 28, 2026, 10_38_10 PM'
+                        ImagePosition: =ImagePosition.Fill
+                        Width: =634
+                  - Button4:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Secondary
+                        BasePaletteColor: =RGBA(189, 178, 176, 1)
+                        Height: =414
+                        OnSelect: =Navigate(VolunteerSignIn, ScreenTransition.Fade)
+                        RadiusBottomLeft: =15
+                        RadiusBottomRight: =15
+                        RadiusTopLeft: =15
+                        RadiusTopRight: =15
+                        Text: =""
+                        Width: =576
+                        X: =29
+                        Y: =340
+                  - Text2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =73
+                        Text: ="Lifeguard Incident Management System"
+                        Width: =482
+                        X: =76
+                        Y: =232
+                  - Text1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =90
+                        Size: =56
+                        Text: ="SafeGuard"
+                        Width: =299
+                        X: =174
+                        Y: =165
+                  - Button4_1:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Secondary
+                        BasePaletteColor: =RGBA(255, 255, 255, 1)
+                        Height: =401
+                        OnSelect: =Navigate(PatrolCaptainSignIn, ScreenTransition.Fade)
+                        RadiusBottomLeft: =15
+                        RadiusBottomRight: =15
+                        RadiusTopLeft: =15
+                        RadiusTopRight: =15
+                        Text: =""
+                        Width: =576
+                        X: =29
+                        Y: =783
+                  - Button6:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        BasePaletteColor: =RGBA(5, 102, 178, 1)
+                        Height: =102
+                        RadiusBottomLeft: =24
+                        RadiusBottomRight: =24
+                        RadiusTopLeft: =24
+                        RadiusTopRight: =24
+                        Text: =""
+                        Width: =118
+                        X: =258
+                        Y: =63
+                  - Text5:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =218
+                        Text: |-
+                          ="• Create new incident reports
+                          • Submit incident details for captain review
+                          • Record location, severity, and description
+                          • View current incident status"
+                        Width: =542
+                        X: =52
+                        Y: =514
+                  - Text6:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =54
+                        Text: ="Respond to incidents and provide assistance"
+                        Width: =536
+                        X: =58
+                        Y: =484
+                  - Text7:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Height: =53
+                        Text: ="Volunteer"
+                        Width: =244
+                        X: =195
+                        Y: =446
+                  - Button6_1:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Transparent
+                        BasePaletteColor: =RGBA(255, 255, 255, 1)
+                        Height: =73
+                        RadiusBottomLeft: =40
+                        RadiusBottomRight: =40
+                        RadiusTopLeft: =40
+                        RadiusTopRight: =40
+                        Text: =""
+                        Width: =78
+                        X: =278
+                        Y: =358
+                  - Button6_2:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Transparent
+                        BasePaletteColor: =RGBA(255, 255, 255, 1)
+                        Height: =73
+                        RadiusBottomLeft: =40
+                        RadiusBottomRight: =40
+                        RadiusTopLeft: =40
+                        RadiusTopRight: =40
+                        Text: =""
+                        Width: =78
+                        X: =284
+                        Y: =816
+                  - Text7_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Height: =53
+                        Text: ="Patrol Captain"
+                        Width: =244
+                        X: =195
+                        Y: =907
+                  - Text6_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =54
+                        Text: ="Organize volunteers and coordinate response"
+                        Width: =576
+                        X: =58
+                        Y: =942
+                  - Text5_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =218
+                        Text: |-
+                          ="• Create new incident reports
+                          • Verify or reject submitted incidents
+                          • Log equipment condition checks
+                          • Update equipment as OK, Repair, or Missing"
+                        Width: =539
+                        X: =55
+                        Y: =966
+                  - Button4_2:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Secondary
+                        BasePaletteColor: =RGBA(255, 255, 255, 1)
+                        Height: =401
+                        OnSelect: =Navigate(ClubAdminSignIn, ScreenTransition.Fade)
+                        RadiusBottomLeft: =15
+                        RadiusBottomRight: =15
+                        RadiusTopLeft: =15
+                        RadiusTopRight: =15
+                        Text: =""
+                        Width: =576
+                        X: =29
+                        Y: =1212
+                  - Button6_3:
+                      Control: ModernButton@1.0.0
+                      Properties:
+                        Appearance: =ButtonAppearance.Transparent
+                        Height: =73
+                        RadiusBottomLeft: =40
+                        RadiusBottomRight: =40
+                        RadiusTopLeft: =40
+                        RadiusTopRight: =40
+                        Text: =""
+                        Width: =78
+                        X: =287
+                        Y: =1232
+                  - Text7_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Height: =53
+                        Text: ="Club Admin"
+                        Width: =244
+                        X: =198
+                        Y: =1314
+                  - Text6_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =54
+                        Text: ="Complete oversight and management"
+                        Width: =536
+                        X: =78
+                        Y: =1344
+                  - Text5_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =218
+                        Text: |-
+                          ="• Review equipment condition records
+                          • Track missing or damaged equipment
+                          • View equipment check history
+                          • Support future reporting and admin workflows"
+                        Width: =548
+                        X: =46
+                        Y: =1381
+                  - Image2:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =97
+                        Image: =waves_logo_white_40
+                        Width: =91
+                        X: =271
+                        Y: =65
+                  - Image3:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =103
+                        Image: =waves_role_orange_24
+                        Width: =45
+                        X: =294
+                        Y: =343
+                  - Image4:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =54
+                        Image: =shield_role_orange_24
+                        Width: =120
+                        X: =263
+                        Y: =828
+                  - Image4_1:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =54
+                        Image: =shield_role_orange_24
+                        Width: =120
+                        X: =263
+                        Y: =1237

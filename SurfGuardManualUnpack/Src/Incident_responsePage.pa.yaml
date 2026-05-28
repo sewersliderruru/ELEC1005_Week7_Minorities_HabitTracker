@@ -1,0 +1,75 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Incident_responsePage:
+    Children:
+      - Text23:
+          Control: ModernText@1.0.0
+          Properties:
+            Height: =248
+            Size: =40
+            Text: |-
+              ="Volunteer Response Module
+
+              This screen is included for navigation continuity only."
+            Width: =572
+            X: =40
+            Y: =83
+      - Text24:
+          Control: ModernText@1.0.0
+          Properties:
+            Height: =302
+            Text: |-
+              ="The current Assignment_2 MVP focuses on the three required use cases:
+              UC01: Log an Incident
+              UC02: Verify an Incident Report
+              UC03: Log Equipment Maintenance"
+            Width: =490
+            X: =40
+            Y: =318
+      - Button10_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.White
+            Color: =Color.Black
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =Color.White
+            Height: =45
+            HoverBorderColor: =Color.White
+            HoverColor: =Color.Black
+            HoverFill: =RGBA(253, 207, 180, 1)
+            OnSelect: |-
+              =Switch(
+                  currentRole,
+
+                  "Volunteer",
+                      Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                  "Patrol Captain",
+                      Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                  "Club Admin",
+                      Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+              )
+            PressedBorderColor: =Color.White
+            PressedFill: =Color.White
+            Size: =20
+            Text: ="Back"
+            Width: =194
+            X: =15
+            Y: =24
+      - Icon3:
+          Control: ModernIcon@1.1.0
+          Properties:
+            Icon: ="ArrowLeft"
+            IconColor: =RGBA(0, 0, 0, 1)
+            Width: =33
+            X: =27
+            Y: =27

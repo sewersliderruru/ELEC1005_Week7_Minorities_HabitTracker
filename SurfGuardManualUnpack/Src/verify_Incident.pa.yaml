@@ -1,0 +1,502 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  verify_Incident:
+    Children:
+      - RectQuickActionBar1_4:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =88
+            Width: =Parent.Width
+      - LblAppName1_4:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Fill: =Color.White
+            Height: =88
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Text11_4:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =App.Theme.Colors.Primary
+            Font: =Font.'Lato Black'
+            Height: =70
+            Size: =35
+            Text: ="SafeGuard"
+            Width: =250
+            X: =99
+      - Button5_4:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Text: |-
+              ="
+              "
+            Width: =72
+            X: =27
+            Y: =9
+      - Image6_8:
+          Control: Image@2.2.3
+          Properties:
+            Height: =70
+            Image: =waves_logo_white_40
+            Width: =61
+            X: =32
+            Y: =9
+      - Text12_4:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="lifegurad Management"
+            Width: =316
+            X: =99
+            Y: =38
+      - Canvas1_4:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            Y: =RectQuickActionBar1_4.Y + RectQuickActionBar1_4.Height
+          Children:
+            - DataCard1_4:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1020
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Button10_2:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =Color.White
+                        Color: =Color.Black
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =45
+                        HoverBorderColor: =Color.White
+                        HoverColor: =Color.Black
+                        HoverFill: =RGBA(253, 207, 180, 1)
+                        OnSelect: |-
+                          =Reset(Reviewer_Name);
+                          Reset(VerificationStatusDropdown);
+
+                          Set(showReviewErrors, false);
+
+                          Switch(
+                              currentRole,
+
+                              "Volunteer",
+                                  Navigate(VolunteerLandingPage, ScreenTransition.Fade),
+
+                              "Patrol Captain",
+                                  Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade),
+
+                              "Club Admin",
+                                  Navigate(ClubAdminLandingPage, ScreenTransition.Fade)
+                          )
+                        PressedBorderColor: =Color.White
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: ="Back"
+                        Width: =194
+                        X: =15
+                        Y: =24
+                  - Icon1_2:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Height: =36
+                        Icon: ="ArrowLeft"
+                        IconColor: =RGBA(0, 0, 0, 1)
+                        Width: =30
+                        X: =34
+                        Y: =28
+                  - Text16_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =104
+                        Size: =50
+                        Text: ="Verify Reported Incident"
+                        Width: =595
+                        X: =22
+                        Y: =52
+                  - Text17_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =48
+                        Text: ="Review and confirm reported incidents"
+                        Width: =526
+                        X: =25
+                        Y: =136
+                  - Button14_2:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =371
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Text: =
+                        Width: =602
+                        X: =15
+                        Y: =195
+                  - Button14_3:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =433
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Text: =
+                        Width: =602
+                        X: =15
+                        Y: =585
+                  - Text18:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Bold
+                        Height: =58
+                        Size: =30
+                        Text: =LatestIncidents.Selected.IncidentTitle
+                        Width: =474
+                        X: =25
+                        Y: =210
+                  - Text18_1:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =62
+                        Text: =LatestIncidents.Selected.Description
+                        Width: =592
+                        X: =25
+                        Y: =251
+                  - Text18_2:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Bold
+                        Height: =58
+                        Size: =30
+                        Text: ="Captain Review"
+                        Width: =474
+                        X: =25
+                        Y: =585
+                  - Text18_3:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =58
+                        Text: ="Verification Status *"
+                        Width: =474
+                        X: =25
+                        Y: =679
+                  - VerificationStatusDropdown:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        Height: =58
+                        Items: =["Pending","Verified", "Rejected"]
+                        Items.Value: =Value
+                        Width: =572
+                        X: =32
+                        Y: =737
+                  - Text18_4:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(106, 122, 127, 1)
+                        Height: =53
+                        Text: ="Zone"
+                        Width: =162
+                        X: =34
+                        Y: =361
+                  - Text18_5:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(106, 122, 127, 1)
+                        Height: =53
+                        Text: ="Location"
+                        Width: =208
+                        X: =302
+                        Y: =361
+                  - Text18_6:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(106, 122, 127, 1)
+                        Height: =61
+                        Text: ="Reported By"
+                        Width: =174
+                        X: =35
+                        Y: =473
+                  - Button14_14:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Color: =Color.White
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: |-
+                          =If(LatestIncidents.Selected.Status.Value = "Verified",
+                             RGBA(172, 247, 113,1),
+                             LatestIncidents.Selected.Status.Value = "Rejected",
+                             RGBA(255, 65, 65, 1),
+                             RGBA(253, 207, 180, 1)
+
+
+                          )
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =Color.White
+                        Height: =115
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: =
+                        Width: =576
+                        X: =30
+                        Y: =887
+                  - Text18_7:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(106, 122, 127, 1)
+                        Height: =53
+                        Text: ="Reported At"
+                        Width: =162
+                        X: =302
+                        Y: =477
+                  - Text18_8:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =49
+                        Text: =LatestIncidents.Selected.BeachSection.Value
+                        Width: =238
+                        X: =64
+                        Y: =403
+                  - Text18_9:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =49
+                        Text: =LatestIncidents.Selected.Location
+                        Width: =318
+                        X: =302
+                        Y: =403
+                  - Text18_10:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =47
+                        Text: =LatestIncidents.Selected.ReportedBy
+                        Width: =260
+                        X: =64
+                        Y: =519
+                  - Text18_11:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =47
+                        Text: =LatestIncidents.Selected.ReportedAt
+                        Width: =305
+                        X: =335
+                        Y: =519
+                  - Button14_12:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        Color: =Color.White
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: |-
+                          =If(LatestIncidents.Selected.Status.Value = "Verified",
+                             RGBA(172, 247, 113,1),
+                             LatestIncidents.Selected.Status.Value = "Rejected",
+                             RGBA(255, 65, 65, 1),
+                             RGBA(253, 207, 180, 1)
+                          )
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =Color.White
+                        Height: =46
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: =LatestIncidents.Selected.Status.Value
+                        Width: =164
+                        X: =28
+                        Y: =314
+                  - Button14_13:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214,221,224,1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: |-
+                          =If(
+                          LatestIncidents.Selected.EmergencyLevel.Value = "low",
+                          ColorValue("#2AF46E"),
+                          LatestIncidents.Selected.EmergencyLevel.Value = "medium",
+                          ColorValue("#FFB92C"),
+                          LatestIncidents.Selected.EmergencyLevel.Value = "high",
+                          ColorValue("#FF5555"),
+                          LatestIncidents.Selected.EmergencyLevel.Value = "critical",
+                          ColorValue("#EF1014"),
+                          ColorValue("#E5E7EB")
+                          )
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =Color.White
+                        Height: =45
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =Color.White
+                        PressedBorderColor: =RGBA(214,221,224,1)
+                        PressedFill: =Color.White
+                        Size: =20
+                        Text: =LatestIncidents.Selected.EmergencyLevel.Value
+                        Width: =182
+                        X: =209
+                        Y: =316
+                  - Icon5:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Icon: ="Globe"
+                        X: =28
+                        Y: =406
+                  - Icon5_1:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Icon: ="Person"
+                        X: =25
+                        Y: =519
+                  - Icon5_2:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Icon: ="Clock"
+                        X: =295
+                        Y: =521
+                  - Button17:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Height: =66
+                        OnSelect: |-
+                          =If(
+                              IsBlank(Reviewer_Name.Text),
+
+                              Set(showReviewErrors, true);
+                              Notify("Please enter who reviewed this incident.", NotificationType.Error),
+
+                              Patch(
+                                  Incidents,
+                                  selectedIncident,
+                                  {
+                                      Status: {Value: VerificationStatusDropdown.Selected.Value},
+                                      VerifiedBy: Reviewer_Name.Text,
+                                      VerifiedAt: Now()
+                                  }
+                              );
+
+                              Set(showReviewErrors, false);
+                              Notify("Review submitted successfully.", NotificationType.Success);
+                              Navigate(PatrolCaptainLandingPage, ScreenTransition.Fade)
+                          )
+                        Text: ="Confirm Review"
+                        Width: =572
+                        X: =32
+                        Y: =807
+                  - Verification_GuidenceText:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        FontWeight: =FontWeight.Bold
+                        Height: =58
+                        Size: =30
+                        Text: |-
+                          =If(
+                              LatestIncidents.Selected.Status.Value = "verified",
+                              "Incident Verified",
+                              LatestIncidents.Selected.Status.Value = "Rejected",
+                              "Incident Rejected",
+                              "Verification Guidance"
+                          )
+                        Width: =474
+                        X: =83
+                        Y: =887
+                  - VG_DescriptionText:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =76
+                        Size: =22
+                        Text: |-
+                          =If(
+                              LatestIncidents.Selected.Status.Value = "verified",
+                              "This incident was verified by " &  LatestIncidents.Selected.VerifiedBy & ", on " & LatestIncidents.Selected.VerifiedAt,
+                              LatestIncidents.Selected.Status.Value = "Rejected",
+                              "this incident was rejected by " &  LatestIncidents.Selected.VerifiedBy & ", on " & LatestIncidents.Selected.VerifiedAt,
+                              "Confirm the report details before marking the incident as verified. Rejected reports are discarded."
+                          )
+                        Width: =529
+                        X: =35
+                        Y: =926
+                  - VG_Icon:
+                      Control: ModernIcon@1.1.0
+                      Properties:
+                        Icon: ="Info"
+                        IconColor: =RGBA(0, 0, 0, 1)
+                        X: =35
+                        Y: =895
+                  - Reviewer_Name:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              showReviewErrors && IsBlank(Reviewer_Name.Text),
+                              ColorValue("#DC2626"),
+                              ColorValue("#D1D5DB")
+                          )
+                        Default: =
+                        Height: =52
+                        HintText: ="e.g Volunteer A"
+                        HoverBorderColor: =RGBA(214,221,224,1)
+                        HoverFill: =Color.White
+                        PressedFill: =Color.White
+                        Width: =525
+                        X: =32
+                        Y: =636
+            - DataCard4_4:
+                Control: DataCard@1.0.2
+                Variant: BlankCard
+                Properties:
+                  Height: =90
+                  Width: =640
+                  X: =0
+                  Y: =1
+                Children:
+                  - Text23_3:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =46
+                        Text: ="© 2026 SafeWatch. All rights reserved."
+                        Width: =462
+                        X: =78
+                        Y: =12
+                  - Text25_3:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =58
+                        Text: |-
+                          ="Emergency: 000 • Non-Emergency: 131 444"
+                        Width: =562
+                        X: =48
+                        Y: =58

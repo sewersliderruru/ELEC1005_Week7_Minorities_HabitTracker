@@ -1,0 +1,345 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  VolunteerLandingPage:
+    Children:
+      - RectQuickActionBar1_6:
+          Control: Rectangle@2.3.0
+          Properties:
+            Height: =88
+            Width: =Parent.Width
+      - LblAppName1_6:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =App.Theme.Colors.PrimaryForeground
+            Fill: =Color.White
+            Height: =88
+            Size: =27
+            Text: |-
+              ="
+              "
+            Width: =Parent.Width
+      - Text11_6:
+          Control: ModernText@1.0.0
+          Properties:
+            Color: =App.Theme.Colors.Primary
+            Font: =Font.'Lato Black'
+            Height: =70
+            Size: =35
+            Text: ="SafeGuard"
+            Width: =250
+            X: =99
+      - Button5_6:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Text: |-
+              ="
+              "
+            Width: =72
+            X: =27
+            Y: =9
+      - Image6_10:
+          Control: Image@2.2.3
+          Properties:
+            Height: =70
+            Image: =waves_logo_white_40
+            Width: =61
+            X: =32
+            Y: =9
+      - Text12_6:
+          Control: ModernText@1.0.0
+          Properties:
+            Text: ="lifegurad Management"
+            Width: =316
+            X: =99
+            Y: =38
+      - Canvas1_6:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            Y: =RectQuickActionBar1_6.Y + RectQuickActionBar1_6.Height
+          Children:
+            - DataCard1_6:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =432
+                  Width: =Parent.Width
+                  X: =0
+                  Y: =0
+                Children:
+                  - Text13_8:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Font: =Font.'Lato Black'
+                        Height: =80
+                        Size: =40
+                        Text: ="Welcome back, Alexa Rivera"
+                        Width: =577
+                        Y: =84
+                  - Text14_4:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =48
+                        Text: ="your currently available for incidents"
+                        Width: =466
+                        Y: =149
+                  - Button7_7:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        Fill: =Color.White
+                        Height: =192
+                        HoverBorderColor: =RGBA(214, 221, 224, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(214, 221, 224, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        Text: |-
+                          ="
+                          "
+                        Width: =594
+                        X: =15
+                        Y: =206
+                  - Text15_18:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Text: ="Total Incidents"
+                        Width: =236
+                        X: =31
+                        Y: =210
+                  - Text15_19:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =84
+                        Size: =50
+                        Text: =CountRows(Incidents)
+                        Width: =154
+                        X: =31
+                        Y: =260
+                  - Text15_20:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Height: =54
+                        Size: =22
+                        Text: |-
+                          =CountIf(
+                              Incidents,
+                              EmergencyLevel.Value = "critical"
+                          ) & " critical"
+                        Width: =134
+                        X: =31
+                        Y: =344
+                  - DropdownMenu_2:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        Default: ="Home"
+                        Height: =68
+                        Items: "=Switch(\n    currentRole,\n    \n    \"Volunteer\",\n        [\"Home\", \"Create Incident\"],\n\n    \"Patrol Captain\",\n        [\"Home\", \"Create Incident\", \"Verify Incidents\", \"Log Equipment\"],\n\n    \"Club Admin\",\n        [\"Home\", \"Log Equipment\"],\n\n    [\"Home\"]\n)"
+                        Items.Value: =Value
+                        OnChange: |-
+                          =Switch(
+                              DropdownMenu_2.Selected.Value,
+
+                              "Home",
+                                  Blank(),
+
+                              "Create Incident",
+                                  Reset(DropdownMenu_2);
+                                  Navigate(CreateIncident, ScreenTransition.Fade),
+
+                              "Log Equipment",
+                                  Reset(DropdownMenu_2);
+                                  Navigate('Equipment Management', ScreenTransition.Fade)
+                          )
+                        OnSelect: =
+                        Width: =609
+                        X: =15
+                        Y: =16
+            - DataCard3_2:
+                Control: DataCard@1.0.2
+                Variant: BlankCard
+                Properties:
+                  Height: =1241
+                  Width: =640
+                  X: =0
+                  Y: =1
+                Children:
+                  - Text19_3:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Lato Black'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =100
+                        Size: =55
+                        Text: ="Recent incidents"
+                        Width: =574
+                        X: =16
+                        Y: =2
+                  - LatestIncidents_2:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        Height: =1121
+                        Items: =Incidents
+                        TemplatePadding: =5
+                        TemplateSize: =260
+                        Y: =120
+                      Children:
+                        - Button3_10:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              DisabledBorderColor: =RGBA(214, 221, 224, 1)
+                              DisabledFill: =RGBA(255, 255, 255, 1)
+                              Fill: =Color.White
+                              Height: =238
+                              HoverBorderColor: =RGBA(214,221,224,1)
+                              HoverFill: =Color.White
+                              OnSelect: |-
+                                =Set(selectedIncident, ThisItem);
+                                Navigate(Incident_responsePage)
+                              PressedBorderColor: =RGBA(214,221,224,1)
+                              PressedFill: =Color.White
+                              Text: =
+                              Width: =600
+                              X: =15
+                              Y: =18
+                        - Incident Title_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Color: =RGBA(0, 0, 0, 1)
+                              Font: =Font.'Lato Black'
+                              Height: =84
+                              Text: =ThisItem.IncidentTitle
+                              Width: =574
+                              X: =28
+                              Y: =65
+                        - Level_2:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(214, 221, 224, 1)
+                              Color: =
+                              DisabledColor: |-
+                                =If(
+                                    ThisItem.EmergencyLevel.Value = "critical",
+                                    Color.White,
+                                    Color.Black
+                                )
+                              DisabledFill: |-
+                                =If(
+                                ThisItem.EmergencyLevel.Value = "low",
+                                ColorValue("#2AF46E"),
+                                ThisItem.EmergencyLevel.Value = "medium",
+                                ColorValue("#FFB92C"),
+                                ThisItem.EmergencyLevel.Value = "high",
+                                ColorValue("#FF5555"),
+                                ThisItem.EmergencyLevel.Value = "critical",
+                                ColorValue("#EF1014"),
+                                ColorValue("#E5E7EB")
+                                )
+                              DisplayMode: =DisplayMode.Disabled
+                              Fill: =RGBA(0, 0, 0, 1)
+                              Height: =52
+                              HoverBorderColor: =Color.White
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Size: =17
+                              Text: =ThisItem.EmergencyLevel.Value
+                              Width: =574
+                              X: =29
+                              Y: =30
+                        - Incident_Description_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =88
+                              Text: =ThisItem.Description
+                              Width: =574
+                              X: =28
+                              Y: =93
+                        - Beach_Zone_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =83
+                              Size: =23
+                              Text: =ThisItem.BeachSection.Value
+                              Width: =96
+                              X: =96
+                              Y: =149
+                        - ReportedWhen_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =107
+                              Size: =23
+                              Text: =ThisItem.ReportedAt
+                              Width: =151
+                              X: =240
+                              Y: =137
+                        - Incident_location_2:
+                            Control: ModernText@1.0.0
+                            Properties:
+                              Height: =83
+                              Size: =23
+                              Text: =ThisItem.Location
+                              Width: =156
+                              X: =459
+                              Y: =149
+                        - Icon1_14:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =38
+                              Icon: ="Globe"
+                              IconColor: =RGBA(79, 90, 94, 1)
+                              Width: =29
+                              X: =67
+                              Y: =170
+                        - Icon1_15:
+                            Control: ModernIcon@1.1.0
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =41
+                              Icon: ="Clock"
+                              IconColor: =RGBA(79, 90, 94, 1)
+                              Width: =32
+                              X: =204
+                              Y: =170
+                        - Image7_9:
+                            Control: Image@2.2.3
+                            Properties:
+                              Height: =41
+                              Image: ='background-removed'
+                              Width: =56
+                              X: =403
+                              Y: =170
+                  - Text19_4:
+                      Control: ModernText@1.0.0
+                      Properties:
+                        Color: =RGBA(106, 122, 127, 1)
+                        Height: =72
+                        Size: =35
+                        Text: ="latest incidents across all zones"
+                        Width: =608
+                        X: =16
+                        Y: =64
+      - Icon4_1:
+          Control: ModernIcon@1.1.0
+          Properties:
+            Height: =51
+            Icon: ="ArrowExit"
+            OnSelect: =Navigate(RoleSelection,ScreenTransition.Fade)
+            Width: =58
+            X: =563
+            Y: =24

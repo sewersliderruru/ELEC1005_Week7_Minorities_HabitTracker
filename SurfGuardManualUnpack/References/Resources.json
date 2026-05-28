@@ -1,0 +1,88 @@
+{
+  "Resources": [
+    {
+      "Name": "SampleImage",
+      "Schema": "i",
+      "IsSampleData": true,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "/ctrllib/image/images/SampleImage.svg",
+      "Path": "/ctrllib/image/images/SampleImage.svg",
+      "Content": "Image",
+      "ResourceKind": "Uri",
+      "RootPath": "ms-appx:///ctrllib/image/images/SampleImage.svg"
+    },
+    {
+      "Name": "waves_logo_white_40",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "fc1c4d20-26a3-404f-992b-c3ca59ff2d6f.svg",
+      "Path": "Assets\\Images\\fc1c4d20-26a3-404f-992b-c3ca59ff2d6f.svg",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/ZmMxYzRkMjAtMjZhMy00MDRmLTk5MmItYzNjYTU5ZmYyZDZm.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A18%3A49Z&ske=2026-05-29T12%3A33%3A49Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A33%3A49Z&sr=b&sp=r&sig=5q2HjZjJmZGd0afj6J7k4JojV4YTi%2BR3WSV0c3EzPbw%3D"
+    },
+    {
+      "Name": "waves_role_orange_24",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "e1a839eb-13a6-463f-8444-3a8da5a8aa09.svg",
+      "Path": "Assets\\Images\\e1a839eb-13a6-463f-8444-3a8da5a8aa09.svg",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/ZTFhODM5ZWItMTNhNi00NjNmLTg0NDQtM2E4ZGE1YThhYTA5.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A18%3A49Z&ske=2026-05-29T12%3A33%3A49Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A33%3A49Z&sr=b&sp=r&sig=3%2Byb5fU4H4cu0I51r7BRHD6%2F2YwGYMFqslrxmodSzE0%3D"
+    },
+    {
+      "Name": "shield_role_orange_24",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "353ce11f-4b7a-48e3-82ab-0cc6e08b12aa.svg",
+      "Path": "Assets\\Images\\353ce11f-4b7a-48e3-82ab-0cc6e08b12aa.svg",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/MzUzY2UxMWYtNGI3YS00OGUzLTgyYWItMGNjNmUwOGIxMmFh.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A18%3A49Z&ske=2026-05-29T12%3A33%3A49Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A33%3A49Z&sr=b&sp=r&sig=AAxem52k1Y1V7aNVeUsMTABJE3WhsNGbLUcaolcf3zo%3D"
+    },
+    {
+      "Name": "ChatGPT Image May 19, 2026, 02_22_40 AM",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "50c5032e-ad0c-452e-8636-65509323d8ab.png",
+      "Path": "Assets\\Images\\50c5032e-ad0c-452e-8636-65509323d8ab.png",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/NTBjNTAzMmUtYWQwYy00NTJlLTg2MzYtNjU1MDkzMjNkOGFi.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A18%3A49Z&ske=2026-05-29T12%3A33%3A49Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A33%3A49Z&sr=b&sp=r&sig=zIDYLiMfVrXpwbamITIZn0nMhM0XYqtaE8kIaiHJ0xQ%3D"
+    },
+    {
+      "Name": "background-removed",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "97c16a32-91b2-4834-bbff-644f45ac7006.png",
+      "Path": "Assets\\Images\\97c16a32-91b2-4834-bbff-644f45ac7006.png",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/OTdjMTZhMzItOTFiMi00ODM0LWJiZmYtNjQ0ZjQ1YWM3MDA2.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A18%3A49Z&ske=2026-05-29T12%3A33%3A49Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A33%3A49Z&sr=b&sp=r&sig=0BtBorQPQmhMWoN9tqVGGU0UhzCkAIUKFKe63fByZuI%3D"
+    },
+    {
+      "Name": "ChatGPT Image May 28, 2026, 10_38_10 PM",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "d297e887-4be8-4d73-831d-6fd5360c8001.png",
+      "Path": "Assets\\Images\\d297e887-4be8-4d73-831d-6fd5360c8001.png",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil102seau.blob.core.windows.net/9feef970-8e84-42fd-b8c7-7e6665fe0587-1/resource/NGU5NmEwZGItMjk1NC00NTUwLTk4NDEtYzVlY2JkOTYyZTU5.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2026-05-28T12%3A38%3A57Z&ske=2026-05-29T12%3A53%3A57Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2026-05-29T12%3A53%3A57Z&sr=b&sp=r&sig=bV7wf2MRNP0SdLAEvye%2BQj%2BUxo1%2FTr2ejPy0m2uHmr8%3D"
+    }
+  ]
+}
